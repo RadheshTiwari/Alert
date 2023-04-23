@@ -6,8 +6,8 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
-import type {Node} from 'react';
+import React, { useState } from "react";
+import type { Node } from "react";
 import {
   Alert,
   Button,
@@ -19,7 +19,7 @@ import {
   TextInput,
   useColorScheme,
   View,
-} from 'react-native';
+} from "react-native";
 
 // import {
 //   Colors,
@@ -120,29 +120,31 @@ import {
 const App = () => {
   const [x, setx] = useState();
   const [y, sety] = useState();
-  //var setz;
+  console.log("value of x", x);
   const [z, setz] = useState();
   return (
     <View>
       <TextInput
         placeholder="value1"
-        style={{fontSize: 30, borderWidth: 2, borderColor: 'black'}}
-        onChangeText={input1 => setx(input1)}
-        value={x}></TextInput>
+        style={{ fontSize: 30, borderWidth: 2, borderColor: "black" }}
+        onChangeText={(input1) => setx(input1)}
+        value={x}
+      ></TextInput>
       <TextInput
         placeholder="value2"
-        style={{fontSize: 30, borderWidth: 2, borderColor: 'black'}}
-        onChangeText={input2 => sety(input2)}
-        value={y}></TextInput>
+        style={{ fontSize: 30, borderWidth: 2, borderColor: "black" }}
+        onChangeText={(input2) => sety(input2)}
+        value={y}
+      ></TextInput>
       <Button
         title="click"
         onPress={() => {
           let result = Number(x) + Number(y);
 
           if (result % 2 == 0) {
-            Alert.alert('even');
+            Alert.alert("even");
           } else {
-            Alert.alert('odd');
+            Alert.alert("odd");
           }
           setz(result);
         }}
